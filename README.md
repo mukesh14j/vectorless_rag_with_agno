@@ -11,6 +11,7 @@ It uses BM25-based retrieval for fast local search and Ollama-hosted LLMs for an
 
 
 **Features**
+
 PDF and DOCX document upload
 Vectorless RAG architecture
 BM25-based document retrieval
@@ -33,8 +34,11 @@ No vector database required
 
 
 
-**Tech Stack
-**
+
+
+**Tech Stack**
+
+
 | Component     | Technology  |
 | ------------- | ----------- |
 | Backend API   | FastAPI     |
@@ -97,7 +101,8 @@ cd frontend   streamlit run app.py
 Frontend runs on:
 http://localhost:8501
 
-How It Works
+**How It Works**
+
 Document Upload
 User uploads PDF/DOCX
 SHA256 hash generated
@@ -175,5 +180,3 @@ Sample Screenshots
 
 
 
-**Author
-Mukesh Kumar**
