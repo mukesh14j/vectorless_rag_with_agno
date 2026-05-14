@@ -48,21 +48,8 @@ No vector database required
 
 **Project Structure**
 
-vectorless-rag/
-│
-├── backend/
-│   ├── main.py
-│   ├── rag_engine.py
-│   ├── chunker.py
-│   ├── document_loader.py
-│   ├── uploads/
-│   └── indexes/
-│
-├── frontend/
-│   └── app.py
-│
-├── requirements.txt
-└── README.md
+<img width="326" height="395" alt="image" src="https://github.com/user-attachments/assets/acb41059-6696-4b73-88d8-c96ddd3c239c" />
+
 
 **Installation**
 1. Clone Repository
