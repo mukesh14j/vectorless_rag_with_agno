@@ -1,5 +1,5 @@
-**Vectorless RAG with Agno + Ollama
-**
+**Vectorless RAG with Agno + Ollama**
+
 
 A fully local Vectorless RAG (Retrieval-Augmented Generation) application built using Agno
 , Ollama
@@ -8,6 +8,7 @@ A fully local Vectorless RAG (Retrieval-Augmented Generation) application built 
 
 This project enables question answering over PDF and DOCX documents without using embeddings or vector databases. 
 It uses BM25-based retrieval for fast local search and Ollama-hosted LLMs for answer generation.
+
 
 **Features**
 PDF and DOCX document upload
@@ -24,27 +25,12 @@ Fully offline support
 No OpenAI dependency
 No vector database required
 
-               ┌─────────────────┐
-               │   Streamlit UI  │
-               └────────┬────────┘
-                        │
-                        ▼
-               ┌─────────────────┐
-               │   FastAPI API   │
-               └────────┬────────┘
-                        │
-        ┌───────────────┼────────────────┐
-        ▼                                ▼
-┌─────────────────┐             ┌─────────────────┐
-│ Vectorless RAG  │             │     Ollama      │
-│  BM25 Retrieval │             │ Local LLM Model │
-└────────┬────────┘             └─────────────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Persistent BM25 │
-│   Disk Cache    │
-└─────────────────┘
+
+<img width="557" height="547" alt="image" src="https://github.com/user-attachments/assets/3979640d-5069-4b0e-8e54-a0c167a62471" />
+
+
+
+
 
 
 **Tech Stack
@@ -60,8 +46,8 @@ No vector database required
 | DOCX Parsing  | python-docx |
 
 
-**Project Structure
-**
+**Project Structure**
+
 vectorless-rag/
 │
 ├── backend/
@@ -78,7 +64,7 @@ vectorless-rag/
 ├── requirements.txt
 └── README.md
 
-nstallation
+**Installation**
 1. Clone Repository
 git clone <your-repo-url>cd vectorless-rag
 
@@ -102,6 +88,7 @@ Ollama Downloads
 Pull Model
 Recommended lightweight model:
 ollama pull qwen2.5:3b
+
 Alternative models:
 ollama pull qwen3:8bollama pull mistral:7bollama pull gemma3:4b
 
@@ -111,7 +98,7 @@ Verify model:
 ollama list
 
 Run Backend
-cd backenduvicorn main:app
+cd backend uvicorn main:app
 Backend runs on:
 http://localhost:8000
 Swagger UI:
@@ -119,50 +106,24 @@ http://localhost:8000/docs
 
 Run Frontend
 Open another terminal:
-cd frontendstreamlit run app.py
+cd frontend   streamlit run app.py
 Frontend runs on:
 http://localhost:8501
 
 How It Works
 Document Upload
-
-
 User uploads PDF/DOCX
-
-
 SHA256 hash generated
-
-
 Duplicate detection performed
-
-
 Text extracted
-
-
 Text chunked
-
-
 BM25 index created
-
-
 Index persisted to disk
-
-
 Question Answering
-
-
 User asks question
-
-
 BM25 retrieves relevant chunks
-
-
 Context sent to Ollama
-
-
 LLM generates answer
-
-
 Answer shown in UI
 
 
@@ -174,32 +135,18 @@ Benefits:
 
 
 No re-indexing after restart
-
-
 Faster startup
-
-
 Duplicate file reuse
-
-
 Automatic overwrite for updated files
 
-
-
-Duplicate Detection
-The system uses SHA256 hashing.
+**Duplicate Detection
+**The system uses SHA256 hashing.
 ScenarioActionSame filename + same contentReuse existing BM25Same filename + updated contentRebuild BM25New filenameCreate new BM25
 
 API Endpoints
 Upload Document
 POST /upload
-Supported:
-
-
-PDF
-
-
-DOCX
+Supported: PDF ,DOCX
 
 
 Response:
@@ -241,5 +188,5 @@ Sample Screenshots
 
 
 
-Author
-Mukesh Kumar
+**Author
+Mukesh Kumar**
