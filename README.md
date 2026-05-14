@@ -1,5 +1,6 @@
 **Vectorless RAG with Agno + Ollama
 **
+
 A fully local Vectorless RAG (Retrieval-Augmented Generation) application built using Agno
 , Ollama
 , FastAPI
